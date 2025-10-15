@@ -79,7 +79,8 @@ Google Kick Start – Rounds
 Codewars – Ongoing coding challenges
 
 Demo / Output
-![image alt](
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/1a18aff48fa6db7b91e13caee8cec2b2f5559fc9/demo%201.png)
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/1a18aff48fa6db7b91e13caee8cec2b2f5559fc9/demo%202%20.png)
 
 Usage
 
