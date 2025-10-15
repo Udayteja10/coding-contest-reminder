@@ -1,0 +1,252 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+/* Themes */
+:root[data-theme="light"] {
+    --bg: #f9f9f9;
+    --text: #111;
+    --header-bg: #fff;
+    --card-bg: #fff;
+    --filter-btn-bg: #eee;
+    --filter-btn-active-bg: #007bff;
+    --filter-btn-text: #111;
+    --filter-btn-active-text: #fff;
+    --modal-bg: rgba(0,0,0,0.5);
+}
+
+:root[data-theme="dark"] {
+    --bg: #121212;
+    --text: #fff;
+    --header-bg: #1f1f1f;
+    --card-bg: #1e1e1e;
+    --filter-btn-bg: #2c2c2c;
+    --filter-btn-active-bg: #007bff;
+    --filter-btn-text: #fff;
+    --filter-btn-active-text: #fff;
+    --modal-bg: rgba(0,0,0,0.7);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--header-bg);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .logo i {
+    font-size: 28px;
+    color: #007bff;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.header-controls {
+    float: right;
+}
+
+.header-controls button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text);
+    margin-left: 10px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.filter-btn {
+    padding: 7px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--filter-btn-bg);
+    color: var(--filter-btn-text);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--filter-btn-active-bg);
+    color: var(--filter-btn-active-text);
+}
+
+/* Contest Cards */
+.contests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.contest-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contest-card:hover {
+    transform: translateY(-5px);
+}
+
+.contest-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contest-card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Platform Colors */
+.platform-leetcode { border-left: 5px solid #FFA116; }
+.platform-codechef { border-left: 5px solid #5B4636; }
+.platform-hackerrank { border-left: 5px solid #2EC866; }
+.platform-codeforces { border-left: 5px solid #1F8ACB; }
+.platform-atcoder { border-left: 5px solid #00A0E9; }
+.platform-kickstart { border-left: 5px solid #FF5722; }
+.platform-topcoder { border-left: 5px solid #2C2C2C; }
+.platform-hackerearth { border-left: 5px solid #323754; }
+.platform-codewars { border-left: 5px solid #9B59B6; }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.modal-content button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--header-bg);
+    color: var(--text);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .filters { flex-direction: column; }
+    .header-controls { float:none; margin-top:10px; text-align:right; }
+}
