@@ -53,19 +53,46 @@ const App = () => {
     });
   };
 
+  const addToCalendar = (contest) => {
+    if (contest.time.toLowerCase() === "anytime") {
+      alert("This contest has no fixed time, so it cannot be added to the calendar.");
+      return;
+    }
+
+    const startDate = new Date(`${contest.date}T${contest.time}:00`);
+    const endDate = new Date(startDate);
+
+    let hours = 0, minutes = 0;
+    if (contest.duration.includes(":")) {
+      const parts = contest.duration.split(/[^\d]+/);
+      hours = parseInt(parts[0]) || 0;
+      minutes = parseInt(parts[1]) || 0;
+    } else {
+      hours = parseInt(contest.duration) || 2;
+    }
+    endDate.setHours(endDate.getHours() + hours);
+    endDate.setMinutes(endDate.getMinutes() + minutes);
+
+    const formatDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const startStr = formatDate(startDate);
+    const endStr = formatDate(endDate);
+
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(contest.title)}&dates=${startStr}/${endStr}&details=${encodeURIComponent(`Join the ${contest.platform} contest!`)}&location=${encodeURIComponent('Online')}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="App">
-      {/* Header */}
       <header className="header">
         <div className="container">
           <div className="logo"><i className="fas fa-code"></i> <h1>Contest Reminder</h1></div>
           <div className="header-controls">
-            <button className="theme-toggle" onClick={toggleTheme}><i className={`fas ${theme === "light" ? "fa-moon" : "fa-sun"}`}></i></button>
+            <button onClick={toggleTheme}><i className={`fas ${theme === "light" ? "fa-moon" : "fa-sun"}`}></i></button>
           </div>
         </div>
       </header>
 
-      {/* Hero */}
       <main className="main">
         <section className="hero">
           <div className="hero-content">
@@ -78,7 +105,6 @@ const App = () => {
           </div>
         </section>
 
-        {/* Filters */}
         <section className="filters">
           <div className="filter-group">
             <label>Platform:</label>
@@ -98,7 +124,6 @@ const App = () => {
           </div>
         </section>
 
-        {/* Contest Cards */}
         <section className="contests-section">
           <h3>Upcoming Contests</h3>
           <div className="contests-grid">
@@ -113,7 +138,6 @@ const App = () => {
         </section>
       </main>
 
-      {/* Modal */}
       {modalContest && (
         <div className="modal" onClick={()=>setModalContest(null)}>
           <div className="modal-content" onClick={e=>e.stopPropagation()}>
@@ -122,11 +146,16 @@ const App = () => {
             <p>Time: {modalContest.time}</p>
             <p>Duration: {modalContest.duration}</p>
             <p>Platform: {modalContest.platform}</p>
-            <button onClick={()=>setModalContest(null)}>Close</button>
+
+            <div className="modal-actions">
+              <button onClick={() => addToCalendar(modalContest)}>
+                <i className="fas fa-calendar-plus"></i> Add to Calendar
+              </button>
+              <button onClick={()=>setModalContest(null)}>Close</button>
+            </div>
           </div>
         </div>
       )}
-
     </div>
   );
 };
