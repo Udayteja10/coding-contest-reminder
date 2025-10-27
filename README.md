@@ -136,6 +136,12 @@ Modify CSS variables in `styles.css`:
     --danger-color: #ef4444;     /* Error messages */
 }
 ```
+##Screenshots
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/afacd73c6af00bc5d8f8bfc0aca5cbac2845d3c8/coding%201.png)
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/afacd73c6af00bc5d8f8bfc0aca5cbac2845d3c8/coding%202.png)
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/a8498f49491a4becb3a007a395c67147cfeb4fa6/add%20to%20calendar.png)
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/a8498f49491a4becb3a007a395c67147cfeb4fa6/WhatsApp%20Image%202025-10-26%20at%2011.31.42%20PM%20(1).jpeg)
+![image alt](https://github.com/Udayteja10/coding-contest-reminder/blob/a8498f49491a4becb3a007a395c67147cfeb4fa6/WhatsApp%20Image%202025-10-26%20at%2011.31.42%20PM.jpeg)
 
 ## Performance Features
 
