@@ -178,7 +178,7 @@ Modify CSS variables in `styles.css`:
 - **High Contrast**: Support for high contrast mode
 - **Reduced Motion**: Respects user's motion preferences
 
-##conclusion 
+## conclusion 
 The Coding Contest Reminder project effectively helps developers stay updated on upcoming programming contests.
 
 It provides a modern, user-friendly interface built with React.
