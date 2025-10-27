@@ -33,7 +33,7 @@ A beautiful, interactive React.js application to help developers never miss codi
 4. Filter by platform or time range using the filter buttons
 5. Click on any contest card to view detailed information
 
-##modules
+## modules
 
 ->Dashboard Module
 
